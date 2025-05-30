@@ -22,7 +22,8 @@
       <!-- Cuadro 1 -->
       <div class="col-auto">
         <div class="bg-yellow rounded p-3">
-          Inicio
+          <h3>SecuCheck</h3>
+          <span></span>
         </div>
       </div>
   
@@ -34,7 +35,8 @@
       <!-- Cuadro 2 -->
       <div class="col-auto">
         <div class="bg-blue rounded p-3" >
-          Proceso
+            <h3>ESB</h3>
+            <span></span>
         </div>
       </div>
   
@@ -46,9 +48,36 @@
       <!-- Cuadro 3 -->
       <div class="col-auto">
         <div class="bg-red rounded p-3 text-white" >
-          Fin
+            <h3>CoreBank</h3>
+            <span></span>
         </div>
       </div>
+    </div>
+    <div class="row mb-3 justify-content-center align-items-center text-center">
+        <div class="col-auto">
+            <h2 class="my-3">Listado De transacciones</h2>
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                  <tr>
+                    <th>ID Transacción</th>
+                    <th>Resultado</th>
+                    <th>Estado Final</th>
+                    <th>Valor</th>
+                    <th>Fecha</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let t of transacciones">
+                    <td>{{ t.transaction_id }}</td>
+                    <td>{{ t.resultado_validacion }}</td>
+                    <td>{{ t.core_estado }}</td>
+                    <td>{{ t.core_valor }}</td>
+                    <td>{{ t.core_fecha | date: 'short' }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+        </div>
     </div>
   </div>
   
