@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TrazabilidadComponent } from './trazabilidad/trazabilidad.component';
 import { AnomaliasComponent } from './anomalias/anomalias.component';
 import { LatenciaComponent } from './latencia/latencia.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LatenciaComponent } from './latencia/latencia.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

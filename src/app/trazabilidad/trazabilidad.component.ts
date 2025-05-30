@@ -18,7 +18,7 @@ export class TrazabilidadComponent implements OnInit{
   }
 
   ngOnInit(){
-
+    this.obtenerTransacciones();
   }
 
   obtenerTransacciones(){
