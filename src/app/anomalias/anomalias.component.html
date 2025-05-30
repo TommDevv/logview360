@@ -1,4 +1,81 @@
 <div class="row my-3">
-    <h2 class="mx-3" style="font-weight: bold;">Eventos Anómalos en Transacciones</h2>
+    <h2 class="m-3" style="font-weight: bold;">Eventos Anómalos en Transacciones</h2>
 </div>
+
+json positivo paso registro al esb
+
+esb si y paso al core
+<!-- {
+    "json_id": "046325ff-f29a-4470-9076-7eb4948f3b84",
+    "json_timestamp": "2025-05-13T08:00:14",
+    "transaction_id": "txn-0014",
+    "resultado_validacion": "Aprobada",
+    "motivo_fallo": "",
+    "verificaciones_realizadas": [
+        "token",
+        "blacklist"
+    ],
+    "esb_timestamp": "2025-05-13 08:00:19",
+    "nivel_log": "ERROR",
+    "direction": "request",
+    "operation": "transferir",
+    "status_code": 500,
+    "latency_ms": null,
+    "core_id": "1a812b10-e70d-48f7-88d6-f78f172518d9",
+    "core_fecha": "2025-05-13T08:00:10",
+    "core_ip": "198.81.20.19",
+    "core_cuenta": "ahorros",
+    "core_estado": "Completada",
+    "core_valor": 429947.36
+} -->
+<table class="table table-bordered table-striped" style="border-width: 2px; border-color: #007bff;">
+    <thead>
+        <tr style="background-color: #17e9e0; color: #222; font-weight: bold;"> 
+            <th style="border-width: 2px;">JSON ID</th>
+            <th style="border-width: 2px;">Timestamp</th>
+            <th style="border-width: 2px;">Transaction ID</th>
+            <th style="border-width: 2px;">Resultado Validación</th>
+            <th style="border-width: 2px;">Motivo Fallo</th>
+            <th style="border-width: 2px;">Verificaciones Realizadas</th>
+            <th style="border-width: 2px;">ESB Timestamp</th>
+            <th style="border-width: 2px;">Nivel Log</th>
+            <th style="border-width: 2px;">Dirección</th>
+            <th style="border-width: 2px;">Operación</th>
+            <th style="border-width: 2px;">Status Code</th>
+            <th style="border-width: 2px;">Latencia (ms)</th>
+            <th style="border-width: 2px;">Core ID</th>
+            <th style="border-width: 2px;">Core Fecha</th>
+            <th style="border-width: 2px;">Core IP</th>
+            <th style="border-width: 2px;">Core Cuenta</th>
+            <th style="border-width: 2px;">Core Estado</th>
+            <th style="border-width: 2px;">Core Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let evento of objetos; let i = index" [ngClass]="{'table-light': i % 2 === 0, 'table-white': i % 2 !== 0}">
+            <td style="border-width: 2px;">{{evento.json_id}}</td>
+            <td style="border-width: 2px;">{{evento.json_timestamp}}</td>
+            <td style="border-width: 2px;">{{evento.transaction_id}}</td>
+            <td style="border-width: 2px;">{{evento.resultado_validacion}}</td>
+            <td style="border-width: 2px;">{{evento.motivo_fallo}}</td>
+            <td style="border-width: 2px;">{{evento.verificaciones_realizadas?.join(', ')}}</td>
+            <td style="border-width: 2px;">{{evento.esb_timestamp}}</td>
+            <td style="border-width: 2px;">{{evento.nivel_log}}</td>
+            <td style="border-width: 2px;">{{evento.direction}}</td>
+            <td style="border-width: 2px;">{{evento.operation}}</td>
+            <td style="border-width: 2px;">{{evento.status_code}}</td>
+            <td style="border-width: 2px;">{{evento.latency_ms}}</td>
+            <td style="border-width: 2px;">{{evento.core_id}}</td>
+            <td style="border-width: 2px;">{{evento.core_fecha}}</td>
+            <td style="border-width: 2px;">{{evento.core_ip}}</td>
+            <td style="border-width: 2px;">{{evento.core_cuenta}}</td>
+            <td style="border-width: 2px;">{{evento.core_estado}}</td>
+            <td style="border-width: 2px;">{{evento.core_valor}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
 

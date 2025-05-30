@@ -2,7 +2,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +15,22 @@ export class DatosService {
   }
 
   cargarIndividual(id:string): Observable<any>{
-    return this.http.get(`${this.urlAPI}/obtener/transaction_id/${id}`);
+    let params = new HttpParams().set('transaction_id', id);
+    
+    return this.http.get(`${this.urlAPI}/obtener/transaction_id/`, {params});
   }
 
   latenciasporId(id:string){
-    return this.http.get(`${this.urlAPI}/latencias/${id}`);
+    let params = new HttpParams().set('transaction_id', id);
+    return this.http.get(`${this.urlAPI}/latencias/`, {params});
+  }
+  cargarAnomalias(): Observable<any> {
+    return this.http.get(`${this.urlAPI}/trazabilidad/inconsistencias`);
+  }
+
+  solicitarInformacion(id: string): Observable<any> {
+    let params = new HttpParams().set('transaction_id', id);
+  
+    return this.http.get(`${this.urlAPI}/obtener/transaction_id/`,{params});
   }
 }
