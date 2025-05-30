@@ -7,13 +7,15 @@ import { TrazabilidadComponent } from './trazabilidad/trazabilidad.component';
 import { AnomaliasComponent } from './anomalias/anomalias.component';
 import { LatenciaComponent } from './latencia/latencia.component';
 import { FormsModule } from '@angular/forms';
+import { CargaArchivosComponent } from './carga-archivos/carga-archivos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TrazabilidadComponent,
     AnomaliasComponent,
-    LatenciaComponent
+    LatenciaComponent,
+    CargaArchivosComponent
   ],
   imports: [
     BrowserModule,

@@ -27,4 +27,10 @@ export class DatosService {
   
     return this.http.get(`${this.urlAPI}/obtener/transaction_id/`,{params});
   }
+  
+  latenciasporId(id:string){
+    return this.http.get(`${this.urlAPI}/latencias/${id}`);
+  }
+
+
 }

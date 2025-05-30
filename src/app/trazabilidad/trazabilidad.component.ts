@@ -12,6 +12,8 @@ export class TrazabilidadComponent implements OnInit{
   transacciones: any[] = []
   registroIndividual: any = null
   individualId: string = ''
+  latenciaESB: string = ''
+  latenciaCORE: string = ''
 
   constructor(private datosService: DatosService){
 
@@ -19,6 +21,7 @@ export class TrazabilidadComponent implements OnInit{
 
   ngOnInit(){
     this.obtenerTransacciones();
+    this.obtenerlatencias();
   }
 
   obtenerTransacciones(){
@@ -37,6 +40,15 @@ export class TrazabilidadComponent implements OnInit{
         this.registroIndividual = data;
       }, error: (error) => {
         console.log(error);
+      }
+    })
+  }
+
+  obtenerlatencias(){
+    this.datosService.cargarIndividual(this.individualId).subscribe({
+      next: (data) => {
+        this.latenciaCORE = data.latencia_json_esb;
+        this.latenciaESB = data.latencia_esb_core;
       }
     })
   }
