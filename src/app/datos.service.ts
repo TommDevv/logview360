@@ -20,10 +20,10 @@ export class DatosService {
     return this.http.get(`${this.urlAPI}/obtener/transaction_id/`, {params});
   }
 
-  latenciasporId(id:string){
-    let params = new HttpParams().set('transaction_id', id);
-    return this.http.get(`${this.urlAPI}/latencias/`, {params});
+  latenciasporId(id:string): Observable<any>{
+    return this.http.get(`${this.urlAPI}/latencias/${id}`,);
   }
+
   cargarAnomalias(): Observable<any> {
     return this.http.get(`${this.urlAPI}/trazabilidad/inconsistencias`);
   }

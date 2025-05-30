@@ -37,7 +37,7 @@
         <!-- Flecha -->
         <div class="col-auto d-flex align-items-center">
           <i class="bi bi-arrow-right fs-2"></i>
-          <span>{{latenciaESB}}</span>
+          <span>{{latenciaESB}}ms</span>
         </div>
       
         <!-- ESB -->
@@ -58,7 +58,7 @@
         <!-- Flecha -->
         <div class="col-auto d-flex align-items-center">
           <i class="bi bi-arrow-right fs-2"></i>
-          <span>{{latenciaCORE}}</span>
+          <span>{{latenciaCORE}}ms</span>
         </div>
       
         <!-- CoreBank -->
@@ -95,7 +95,7 @@
                 <td>{{ t.resultado_validacion }}</td>
                 <td>{{ t.core_estado }}</td>
                 <td>{{ t.core_valor }}</td>
-                <td>{{ t.core_fecha | date: 'short' }}</td>
+                <td>{{ formatFechaCompleta(t.core_fecha) }}</td>
               </tr>
             </tbody>
           </table>
