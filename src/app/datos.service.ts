@@ -18,4 +18,8 @@ export class DatosService {
   cargarIndividual(id:string): Observable<any>{
     return this.http.get(`${this.urlAPI}/obtener/transaction_id/${id}`);
   }
+
+  latenciasporId(id:string){
+    return this.http.get(`${this.urlAPI}/latencias/${id}`);
+  }
 }

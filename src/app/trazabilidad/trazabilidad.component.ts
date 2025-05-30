@@ -42,5 +42,14 @@ export class TrazabilidadComponent implements OnInit{
       }
     })
   }
+
+  obtenerlatencias(){
+    this.datosService.cargarIndividual(this.individualId).subscribe({
+      next: (data) => {
+        this.latenciaCORE = data.latencia_json_esb;
+        this.latenciaESB = data.latencia_esb_core;
+      }
+    })
+  }
   
 }
