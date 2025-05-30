@@ -3,10 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TrazabilidadComponent } from './trazabilidad/trazabilidad.component';
+import { AnomaliasComponent } from './anomalias/anomalias.component';
+import { LatenciaComponent } from './latencia/latencia.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TrazabilidadComponent,
+    AnomaliasComponent,
+    LatenciaComponent
   ],
   imports: [
     BrowserModule,
