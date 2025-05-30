@@ -14,6 +14,10 @@ export class AnomaliasComponent implements OnInit {
   constructor(private datosService: DatosService) {
     this.inconsistencias = [];
     this.objetos = [];
+  }
+
+
+  ngOnInit(): void {
     this.datosService.cargarAnomalias().subscribe({next: (response) => {
       this.inconsistencias = response.resultados;
       for (let inconsistencia of this.inconsistencias) {
@@ -31,11 +35,6 @@ export class AnomaliasComponent implements OnInit {
     }
     })
 
-  }
-
-
-  ngOnInit(): void {
-    
 
   }
 

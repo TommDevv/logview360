@@ -32,7 +32,7 @@ export class TrazabilidadComponent implements OnInit{
   }
 
   obtenerIndividual(){
-    this.datosService.cargarIndividual(this.individualId).subscribe({
+    this.datosService.solicitarInformacion(this.individualId).subscribe({
       next: (data) => {
         this.registroIndividual = data;
       }, error: (error) => {
