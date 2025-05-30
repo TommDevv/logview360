@@ -20,6 +20,7 @@
     "@angular/router": "^16.1.0",
     "bootstrap": "^5.3.6",
     "bootstrap-icons": "^1.13.1",
+    "logview360": "file:",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
