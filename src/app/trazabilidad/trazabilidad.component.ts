@@ -12,6 +12,8 @@ export class TrazabilidadComponent implements OnInit{
   transacciones: any[] = []
   registroIndividual: any = null
   individualId: string = ''
+  latenciaESB: string = ''
+  latenciaCORE: string = ''
 
   constructor(private datosService: DatosService){
 
