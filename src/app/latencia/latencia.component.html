@@ -44,28 +44,27 @@
 <body>
 
     <h2>Tabla de Trazabilidad de Tiempos</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Time Stamp SecuCheck</th>
+      <th>Latencia SecuCheck → ESB</th>
+      <th>Time Stamp ESB</th>
+      <th>Latencia ESB → Core</th>
+      <th>Time Stamp Core</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let r of registros">
+      <td>{{ r.timestampJson}}</td>
+      <td>{{ r.latenciaJsonCsv}}</td>
+      <td>{{ r.timestampCsv}}</td>
+      <td>{{ r.latenciaCsvLogs}}</td>
+      <td>{{ r.timestampLogs}}</td>
+    </tr>
+  </tbody>
+</table>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Timestamp SecuCheck</th>
-                <th>Latencia SecuCheck → ESB</th>
-                <th>Timestamp ESB</th>
-                <th>Latencia ESB → Core</th>
-                <th>Timestamp Core</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>2025-05-29 08:00:00</td>
-                <td>100 ms</td>
-                <td>2025-05-29 08:00:01</td>
-                <td>150 ms</td>
-                <td>2025-05-29 08:00:01.150</td>
-            </tr>
-            <!-- Puedes agregar más filas aquí dinámicamente -->
-        </tbody>
-    </table>
 
 </body>
 </html>

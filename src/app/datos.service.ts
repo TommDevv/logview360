@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,5 +18,9 @@ export class DatosService {
 
   cargarIndividual(id:string): Observable<any>{
     return this.http.get(`${this.urlAPI}/obtener/transaction_id/${id}`);
+  }
+
+  obtenerLatencias(): Observable<any>{
+    return this.http.get(`${this.urlAPI}/obtener/latencias`);
   }
 }
