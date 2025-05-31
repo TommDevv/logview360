@@ -11,7 +11,7 @@
       <div class="col-md-6">
         <label for="busquedaTr" class="form-label">Filtrar Trazabilidad por código de latencia</label>
         <div class="input-group">
-          <input id="busquedaTr" type="text" class="form-control" placeholder="Ingrese el ID de la transacción" >
+          <input id="busquedaTr" type="text" class="form-control" placeholder="Ingrese el ID de la transacción" [(ngModel)]="individualId">
           <button class="btn btn-primary" type="button" (click)="obtenerIndividual()">Filtrar</button>
         </div>
       </div>
@@ -37,7 +37,7 @@
         <!-- Flecha -->
         <div class="col-auto d-flex align-items-center">
           <i class="bi bi-arrow-right fs-2"></i>
-          <span>{{latenciaESB}}ms</span>
+          <span>{{latenciaESB}}</span>
         </div>
       
         <!-- ESB -->
@@ -58,7 +58,7 @@
         <!-- Flecha -->
         <div class="col-auto d-flex align-items-center">
           <i class="bi bi-arrow-right fs-2"></i>
-          <span>{{latenciaCORE}}ms</span>
+          <span>{{latenciaCORE}}</span>
         </div>
       
         <!-- CoreBank -->
@@ -96,7 +96,7 @@
                 <td>{{ t.resultado_validacion }}</td>
                 <td>{{ t.core_estado }}</td>
                 <td>{{ t.core_valor }}</td>
-                <td>{{ formatFechaCompleta(t.core_fecha) }}</td>
+                <td>{{ t.core_fecha | date: 'short' }}</td>
               </tr>
             </tbody>
           </table>
