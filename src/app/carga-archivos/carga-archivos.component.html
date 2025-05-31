@@ -1,1 +1,42 @@
-<p>carga-archivos works!</p>
+<div class="container mt-4">
+    <!-- Título -->
+    <div class="row mb-3">
+      <div class="col">
+        <h2 class="fw-bold">Carga de archivos</h2>
+      </div>
+    </div>
+  
+    <!-- Formulario de carga -->
+    <div class="row g-3">
+      <!-- SecuCheck (JSON) -->
+      <div class="col-md-6">
+        <label for="secuCheckFile" class="form-label">Cargar registros de SecuCheck (.json)</label>
+        <input class="form-control" type="file" id="secuCheckFile" accept=".json" (change)="onFileSelected($event, 'secuCheck')">
+      </div>
+  
+      <!-- MidFlow ESB (CSV) -->
+      <div class="col-md-6">
+        <label for="esbFile" class="form-label">Cargar registros de MidFlow ESB (.csv)</label>
+        <input class="form-control" type="file" id="esbFile" accept=".csv" (change)="onFileSelected($event, 'esb')">
+      </div>
+  
+      <!-- CoreBank (.log) -->
+      <div class="col-md-6">
+        <label for="coreFile" class="form-label">Cargar registros de CoreBank (.log)</label>
+        <input class="form-control" type="file" id="coreFile" accept=".log" (change)="onFileSelected($event, 'core')">
+      </div>
+  
+      <div class="col-12" *ngIf="loading">
+        <div class="alert alert-info" role="alert">
+          🔄 Subiendo archivos… por favor espera, puede tardar unos segundos.
+        </div>
+      </div>
+
+      <!-- Botón de envío -->
+      <div class="col-12">
+        <button class="btn btn-success mt-3" (click)="subirArchivos()" [disabled]="!secuCheckFile || !esbFile || !coreFile">
+          Subir
+        </button>
+      </div>
+    </div>
+  </div>

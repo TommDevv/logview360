@@ -33,4 +33,22 @@ export class DatosService {
   
     return this.http.get(`${this.urlAPI}/obtener/transaction_id/`,{params});
   }
+
+  cargarJson(json:string){
+    const jsonData = JSON.parse(json);
+    return this.http.post(`${this.urlAPI}/json/`, jsonData);
+  }
+
+  
+   enviarEsbCsv(file: File) {
+    const formData = new FormData();
+    formData.append('file', file); // nombre del campo esperado por el backend
+    return this.http.post(`${this.urlAPI}/upload_csv`, formData);
+  }
+
+  enviarCoreLog(file: File) {
+    const formData = new FormData();
+    formData.append('file', file); // nombre del campo esperado por el backend
+    return this.http.post(`${this.urlAPI}/procesar_logs`, formData);
+  }
 }
