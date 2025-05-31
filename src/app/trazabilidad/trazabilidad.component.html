@@ -11,7 +11,7 @@
       <div class="col-md-6">
         <label for="busquedaTr" class="form-label">Filtrar Trazabilidad por código de latencia</label>
         <div class="input-group">
-          <input id="busquedaTr" type="text" class="form-control" placeholder="Ingrese el ID de la transacción" [(ngModel)]="individualId">
+          <input id="busquedaTr" type="text" class="form-control" placeholder="Ingrese el ID de la transacción" >
           <button class="btn btn-primary" type="button" (click)="obtenerIndividual()">Filtrar</button>
         </div>
       </div>
@@ -76,6 +76,7 @@
           </div>
         </div>
       </div>
+    
     <div class="row mb-3">
         <div class="col-12">
           <h2 class="my-3 text-center">Listado De transacciones</h2>
@@ -95,7 +96,7 @@
                 <td>{{ t.resultado_validacion }}</td>
                 <td>{{ t.core_estado }}</td>
                 <td>{{ t.core_valor }}</td>
-                <td>{{ t.core_fecha | date: 'short' }}</td>
+                <td>{{ t.core_fecha }}</td>
               </tr>
             </tbody>
           </table>

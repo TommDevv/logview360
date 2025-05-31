@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./carga-archivos.component.scss']
 })
 export class CargaArchivosComponent {
+  
 
 }

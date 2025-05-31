@@ -32,5 +32,9 @@ export class DatosService {
     return this.http.get(`${this.urlAPI}/latencias/${id}`);
   }
 
+  obtenerHistograma(): Observable<any> {
+    return this.http.get(`${this.urlAPI}/graficos/histograma`, { responseType: 'blob' });
+  }
+
 
 }

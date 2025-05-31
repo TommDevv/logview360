@@ -8,6 +8,7 @@ import { AnomaliasComponent } from './anomalias/anomalias.component';
 import { LatenciaComponent } from './latencia/latencia.component';
 import { FormsModule } from '@angular/forms';
 import { CargaArchivosComponent } from './carga-archivos/carga-archivos.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CargaArchivosComponent } from './carga-archivos/carga-archivos.componen
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
