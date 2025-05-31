@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,7 +20,6 @@ export class DatosService {
     
     return this.http.get(`${this.urlAPI}/obtener/transaction_id/`, {params});
   }
-
   latenciasporId(id:string): Observable<any>{
     return this.http.get(`${this.urlAPI}/latencias/${id}`,);
   }
@@ -56,5 +56,7 @@ export class DatosService {
     return this.http.get(`${this.urlAPI}/graficos/histograma`, { responseType: 'blob' });
   }
 
-
+  obtenerLatencias(): Observable<any>{
+    return this.http.get(`${this.urlAPI}/obtener/latencias`);
+  }
 }
