@@ -51,4 +51,10 @@ export class DatosService {
     formData.append('file', file); // nombre del campo esperado por el backend
     return this.http.post(`${this.urlAPI}/procesar_logs`, formData);
   }
+
+  obtenerHistograma(): Observable<any> {
+    return this.http.get(`${this.urlAPI}/graficos/histograma`, { responseType: 'blob' });
+  }
+
+
 }
