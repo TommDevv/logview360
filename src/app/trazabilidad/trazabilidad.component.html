@@ -11,7 +11,7 @@
       <div class="col-md-6">
         <label for="busquedaTr" class="form-label">Filtrar Trazabilidad por código de latencia</label>
         <div class="input-group">
-          <input id="busquedaTr" type="text" class="form-control" placeholder="Ingrese el ID de la transacción" >
+          <input id="busquedaTr" type="text" class="form-control" placeholder="Ingrese el ID de la transacción" [(ngModel)]=" individualId">
           <button class="btn btn-primary" type="button" (click)="obtenerIndividual()">Filtrar</button>
         </div>
       </div>
@@ -24,7 +24,7 @@
           <div class="bg-yellow rounded p-3">
             <h3>SecuCheck</h3>
             <div class="text-start">
-              <p><strong>ID JSON:</strong> {{ registroIndividual?.json_id }}</p>
+              <p><strong>ID:</strong> {{ registroIndividual?.json_id }}</p>
               <p><strong>Timestamp:</strong> {{ registroIndividual?.json_timestamp }}</p>
               <p><strong>Transacción:</strong> {{ registroIndividual?.transaction_id }}</p>
               <p><strong>Resultado:</strong> {{ registroIndividual?.resultado_validacion }}</p>
@@ -66,7 +66,6 @@
           <div class="bg-red rounded p-3">
             <h3>CoreBank</h3>
             <div class="text-start">
-              <p><strong>ID Core:</strong> {{ registroIndividual?.core_id }}</p>
               <p><strong>Fecha:</strong> {{ registroIndividual?.core_fecha }}</p>
               <p><strong>IP:</strong> {{ registroIndividual?.core_ip }}</p>
               <p><strong>Cuenta:</strong> {{ registroIndividual?.core_cuenta }}</p>
